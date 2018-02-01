@@ -21,7 +21,7 @@ public class IndexController {
     @RequestMapping(value = "JdbcTest", method = RequestMethod.GET)
     public List<String> Index() {
         List<String> response = null;
-        jdbcBaseDao.queryAll();
+//        jdbcBaseDao.queryAll();
         return response;
     }
 }
