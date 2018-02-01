@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+<!-- 命名的配置 -->
+<named-config name="mysqlServer">
+
+	<property name="driverClass">com.mysql.jdbc.Driver</property>
+	<property name="jdbcUrl">jdbc:mysql://127.0.0.1:3306/yu?characterEncoding=utf-8&amp;useSSL=true</property>
+	<property name="user">root</property>
+	<property name="password">root</property>
+	<property name="acquireIncrement">5</property><!-- 如果池中数据连接不够时一次增长多少个 -->
+	<property name="initialPoolSize">10</property><!--  初始化时创建的连接数，应在minPoolSize与maxPoolSize之间取值。默认为3；-->
+	<property name="minPoolSize">10</property><!--  连接池最小连接数  -->
+	<property name="maxPoolSize">100</property><!--  连接池最大连接数  -->
+	<property name="maxStatements">0</property><!-- JDBC的标准参数，用以控制数据源内加载的PreparedStatement数量。但由于预缓存的Statement属于单个Connection而不是整个连接池。所以设置这个参数需要考虑到多方面的因素，如果maxStatements与 maxStatementsPerConnection均为0，则缓存被关闭。默认为0；-->
+	<property name="maxStatementsPerConnection">5</property> <!--  连接池内单个连接所拥有的最大缓存Statement数。默认为0；  -->
+
+	<!-- Configuring Connection Testing -->
+	<property name="preferredTestQuery">select 1</property>
+	<property name="idleConnectionTestPeriod">300</property>
+</named-config>
+</c3p0-config>
